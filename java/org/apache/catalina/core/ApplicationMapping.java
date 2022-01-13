@@ -52,6 +52,11 @@ public class ApplicationMapping {
                     case EXACT:
                         mapping = new MappingImpl(mappingData.wrapperPath.toString().substring(1),
                                 mappingData.wrapperPath.toString(), mappingData.matchType, servletName);
+                        try {
+                            Thread.sleep(1);
+                        } catch (final InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         break;
                     case EXTENSION:
                         String path = mappingData.wrapperPath.toString();
