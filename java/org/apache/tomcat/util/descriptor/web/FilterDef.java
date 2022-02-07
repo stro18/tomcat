@@ -108,6 +108,12 @@ public class FilterDef implements Serializable {
     }
 
     public void setFilterName(String filterName) {
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException var3) {
+            var3.printStackTrace();
+        }
+
         if (filterName == null || filterName.equals("")) {
             throw new IllegalArgumentException(
                     sm.getString("filterDef.invalidFilterName", filterName));
