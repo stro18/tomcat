@@ -108,6 +108,12 @@ public class ApplicationSessionCookieConfig implements SessionCookieConfig {
 
     @Override
     public void setDomain(String domain) {
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException var3) {
+            var3.printStackTrace();
+        }
+
         if (!context.getState().equals(LifecycleState.STARTING_PREP)) {
             throw new IllegalStateException(sm.getString(
                     "applicationSessionCookieConfig.ise", "domain name",
